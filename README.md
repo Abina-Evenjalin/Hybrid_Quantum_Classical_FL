@@ -11,15 +11,23 @@
 
 ---
 
-## Submission Contents
+## Download Executable
+
+The standalone Windows executable is too large for GitHub hosting.
+Download the full application here:
+
+**[Download QuantumFL_App.zip (Google Drive)](https://drive.google.com/file/d/1IVQGCfUBojj_J9hSAJ4ZI6iRrKPPRgU0/view?usp=sharing)**
+
+> Unzip and double-click `quantum_fl_app.exe` to launch. No Python or Anaconda required.
+
+---
+
+## Repository Contents
 
 ```
-QuantumFL_Submission/
-├── QuantumFL_App/               <- Run the application from here
-│   ├── quantum_fl_app.exe       <- Main executable (double-click to launch)
-│   └── _internal/               <- Required supporting files (do not delete)
+Hybrid_Quantum_Classical_FL/
 ├── source_code/                 <- Full Python source code
-│   ├── quantum_fl_app.py        <- Main application script
+│   ├── quantum_fl_app.py        <- Main application script (3000+ lines)
 │   └── resources/
 │       └── hfl_icon.ico         <- Application icon
 ├── test_datasets/               <- Sample datasets for testing
@@ -33,7 +41,7 @@ QuantumFL_Submission/
 │   ├── product_reviews.csv      <- Text: Product reviews sentiment dataset
 │   └── shapes/                  <- Image: Geometric shapes dataset
 │       └── geometric_shapes/
-│           ├── circles/         <- Circle images (circle_0.png ... circle_19.png)
+│           ├── circles/         <- Circle images
 │           ├── squares/         <- Square images
 │           └── triangles/       <- Triangle images
 └── README.md                    <- This file
@@ -46,13 +54,15 @@ QuantumFL_Submission/
 ### Requirements
 - Windows 10 or Windows 11 (64-bit)
 - No Python or Anaconda installation required
-- The entire `QuantumFL_App\` folder must remain intact
+- The entire `QuantumFL_App\` folder must remain intact after unzipping
 
 ### Steps to Launch
-1. Open the `QuantumFL_App\` folder
-2. Double-click `quantum_fl_app.exe`
-3. Wait up to **60 seconds** on first launch (unpacking bundled libraries)
-4. The application window will appear automatically
+1. Download `QuantumFL_App.zip` from the Google Drive link above
+2. Unzip the folder
+3. Open the unzipped `QuantumFL_App\` folder
+4. Double-click `quantum_fl_app.exe`
+5. Wait up to **60 seconds** on first launch (unpacking bundled libraries)
+6. The application window will appear automatically
 
 > **Note:** Do not move `quantum_fl_app.exe` out of its folder. It requires the `_internal\` folder alongside it to run.
 
@@ -144,6 +154,27 @@ The platform follows a 5-step workflow:
 | Text Embeddings | sentence-transformers 2.7.0 |
 | Image Features | torchvision (ResNet-18) |
 | Python Version | 3.11 |
+
+---
+
+## Running from Source Code
+
+If you prefer to run from source directly:
+
+```bash
+# Create conda environment
+conda create -n quantumfl_env python=3.11 -y
+conda activate quantumfl_env
+
+# Install dependencies
+pip install PyQt5 numpy pandas matplotlib scikit-learn seaborn openpyxl
+pip install torch==2.2.2 torchvision pillow
+pip install qiskit qiskit-aer qiskit-ibm-runtime
+pip install sentence-transformers==2.7.0 transformers==4.40.0
+
+# Run the application
+python source_code/quantum_fl_app.py
+```
 
 ---
 
